@@ -1,0 +1,18 @@
+.home{
+    background-image: url('../images/blood-background.jpg');
+background-repeat: repeat;
+height: 300%;
+background-attachment: scroll;
+background-size: cover; 
+height: 100vh;
+image-rendering:optimizeQuality;
+
+}
+.home p{
+    font-size: 5rem;
+    position: absolute;
+    left: 28rem;
+    top:10rem;
+    display: flex;
+    justify-content: center;
+}

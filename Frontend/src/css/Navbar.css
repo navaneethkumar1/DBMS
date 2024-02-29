@@ -1,0 +1,47 @@
+*{
+    overflow-x: hidden;
+}
+.navbar{
+    
+    background-color: #FFF7F1;
+    height: auto; 
+    margin-top: 0;
+    padding: 3px 0; 
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+}
+.nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+  
+ margin: 0;
+
+}
+.nav>li{
+    list-style: none;
+    font-size: 20px;
+    transition: color 0.3s; 
+   
+ margin: 0 20px;
+}
+
+.nav > li:hover {
+  color: #FF8911; 
+}  
+
+.head a{
+    font-size:3rem;
+    text-decoration:none;
+    color:#D21312;
+    font-weight: bold;
+}
+.head a:hover{
+    color:#FC6736;
+}
+.nav >li>a{
+    text-decoration: none;
+}
