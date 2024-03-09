@@ -1,5 +1,6 @@
   import React from 'react';
 import Home from './components/Home';
+import About from './components/About';
 import Service from './components/Service';
 import Contact from './components/Contact';
   import './App.css';
@@ -15,7 +16,7 @@ import Admin from './Adminmain/Admin';
           <Route path='/' element={<Signup/>}/>
           <Route path='/Login' element={<Login/>}/>
           <Route path='/Home' element={<Home/>}/>
-          
+          <Route path='/About' element={<About/>}/>
           <Route path='/Service' element={<Service/>}/>
           <Route path='/Contact'element={<Contact/>}/>
           <Route path='/Admin' element={<Admin/>}/>
