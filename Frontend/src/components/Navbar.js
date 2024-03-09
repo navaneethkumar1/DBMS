@@ -11,7 +11,7 @@ function Navbar(){
                         <div className="head">
                             <a>BLOOD CENTER</a>
                         </div>
-                    <li><Link to='/'>HOME</Link></li>
+                    <li><Link to='/Home'>HOME</Link></li>
                     <li>ABOUT US</li>
                     <li>GALLERY</li>
                     <li><Link to='/Service'>SERVICES</Link></li>

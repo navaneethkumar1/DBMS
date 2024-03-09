@@ -7,9 +7,10 @@
     height: auto; 
     margin-top: 0;
     padding: 3px 0; 
-    position: fixed;
-    z-index: 100;
+    position:fixed;
+    z-index: 1000;
     width: 100%;
+    top:0;
 }
 .nav{
     display: flex;

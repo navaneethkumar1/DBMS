@@ -1,10 +1,9 @@
 .home{
     background-image: url('../images/blood-background.jpg');
-background-repeat: repeat;
-height: 300%;
+background-repeat:repeat;
 background-attachment: scroll;
 background-size: cover; 
-height: 100vh;
+height: 40vh;
 image-rendering:optimizeQuality;
 
 }

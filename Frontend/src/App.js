@@ -18,7 +18,7 @@ import Admin from './Adminmain/Admin';
           
           <Route path='/Service' element={<Service/>}/>
           <Route path='/Contact'element={<Contact/>}/>
-          <Route path='/Adminmain/Admin' element={<Admin/>}/>
+          <Route path='/Admin' element={<Admin/>}/>
         </Routes>
         </BrowserRouter>
     
