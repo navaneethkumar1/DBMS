@@ -7,10 +7,19 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import Admin from './Adminmain/Admin';
+
+import AdminDashboard from './components/AdminDashboard';
+import Read from './components/Read';
+import Edit from './components/Edit';
+
+
+
+
   function App() {
     return (
       <div className="App">
         <BrowserRouter>
+
         <Routes>
           <Route path='/' element={<Signup/>}/>
           <Route path='/Login' element={<Login/>}/>
@@ -19,6 +28,14 @@ import Admin from './Adminmain/Admin';
           <Route path='/Service' element={<Service/>}/>
           <Route path='/Contact'element={<Contact/>}/>
           <Route path='/Adminmain/Admin' element={<Admin/>}/>
+ 
+          <Route path='/AdminDashboard' element={<AdminDashboard/>}/>
+
+          <Route path='/read/:id' element={<Read/>} />
+          <Route path='/edit/:id' element={<Edit/>} />
+
+        
+
         </Routes>
         </BrowserRouter>
     

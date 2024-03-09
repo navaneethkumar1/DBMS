@@ -22,7 +22,7 @@
     box-shadow:5px solid red;
     overflow: hidden;
 }
-.button{
+.button_signup{
     width:220px;
     margin:35px auto;
     position:relative;
@@ -41,7 +41,7 @@
 button:hover{
     background-color:none;
 }
-.btn{
+.lr{
     top:0;
     left:0;
     position: absolute;
