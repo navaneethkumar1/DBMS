@@ -3,6 +3,7 @@ import Home from './components/Home';
 import About from './components/About';
 import Service from './components/Service';
 import Donate from './components/Donate';
+import Blood from './components/Blood';
 import Contact from './components/Contact';
   import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -20,6 +21,7 @@ import Admin from './Adminmain/Admin';
           <Route path='/About' element={<About/>}/>
           <Route path='/Service' element={<Service/>}/>
           <Route path='/Donate' element={<Donate/>}/>
+          <Route path='/Blood' element={<Blood/>}/>
           <Route path='/Contact'element={<Contact/>}/>
           <Route path='/Admin' element={<Admin/>}/>
         </Routes>

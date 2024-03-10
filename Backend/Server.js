@@ -86,7 +86,7 @@ app.listen(8081,()=>{
 })
 // donate blood
 
-app.post('/Donate',(req,res)=>{
+app.post('/Blood',(req,res)=>{
     const sql = "INSERT INTO donate_blood (`blood_name`, `blood_age`, `blood_group`,`blood_gender`,`blood_phone`,`blood_city`) VALUES (?)";
 
     const values=[req.body.blood_name,req.body.blood_age,req.body.blood_group,req.body.blood_gender,req.body.blood_phone,req.body.blood_city]

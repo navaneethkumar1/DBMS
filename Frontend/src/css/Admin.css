@@ -1,4 +1,6 @@
-
+*{
+  text-decoration: none;
+}
 .admin-login{
     padding: 25px;
 }
