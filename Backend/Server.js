@@ -4,7 +4,6 @@ const cors=require("cors");
 
 const app=express();
 app.use(cors());
-
 app.use(express.json());
 // database
 const db=mysql.createConnection(
@@ -14,6 +13,9 @@ const db=mysql.createConnection(
         password:"",
         database:"blood"
     })
+
+
+
     app.get('/',(req,res)=>{
         const sql="SELECT *FROM ";
         db.query(sql, (err,result)=>{
@@ -45,6 +47,8 @@ app.post('/Signup',(req,res)=>{
 })
 
 
+
+//login
 //user login
 
 app.post('/Login',(req,res)=>{
@@ -81,9 +85,69 @@ db.query(sql,[req.body.Admin_email,req.body.Admin_password],(err,data)=>{
 })
 })
 
-app.listen(8081,()=>{
-    console.log("listening");
+app.get('/admindashboard',(req,res)=>{
+    const sql="SELECT *FROM donation";
+    db.query(sql, (err,result)=>{
+        if(err) return res.json({Message:"error in server"});
+        return res.json(result);
+
+    })
 })
+
+
+app.post('/donation',(req,res)=>{
+    const sql="INSERT INTO donation (`user_name`,`user_gender`,`user_age`,`user_group`,`user_address`,`user_phone`) VALUES (?)";
+    console.log(req.body)
+    const values = [
+        req.body.name,
+        req.body.gender,
+        req.body.age,
+        req.body.bloodgroup,
+        req.body.address,
+        req.body.phone,
+    ]
+      db.query(sql, [values], (err,result)=>{
+        if(err) return res.json(err);
+        return res.json(result);
+      })
+})
+
+app.get('/read/:id', (req,res)=>{
+    const sql = "SELECT * FROM donation WHERE user_id = ?";
+    const id=req.params.id;
+    
+    db.query(sql,[id], (err,result)=>{
+    if(err) return res.json({Message: "error in server"});
+    return res.json(result);
+})
+})
+
+
+
+app.put('/edit/:id', (req , res)=>{
+    const sql='UPDATE donation SET `user_name`=?,`user_gender`=?,`user_age`=?,`user_group`=?,`user_address`=?,`user_phone`=? WHERE user_id=?';
+    const id=req.params.id;
+    db.query(sql,[req.body.name, req.body.gender, req.body.age, req.body.bloodgroup, req.body.address, req.body.phone, id], (err, result)=>{
+        if(err) return res.json({Message: "error in server"});
+    return res.json(result);
+
+    })
+})
+
+
+app.delete('/delete/:id',(req,res)=>{
+    const sql = "DELETE FROM donation WHERE user_id=? ";
+    const id=req.params.id;
+    db.query(sql,[id], (err, result)=>{
+        if(err) return res.json({Message: "error in server"});
+    return res.json(result);
+
+    })
+
+
+
+})
+
 // donate blood
 
 app.post('/Blood',(req,res)=>{
@@ -140,3 +204,15 @@ app.post('/Stemcell',(req,res)=>{
         return res.json(data);
     })
 })
+
+
+app.listen(8000,()=>{
+    console.log("listening");
+})
+
+
+
+
+  
+
+  

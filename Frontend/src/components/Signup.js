@@ -75,8 +75,8 @@ const handleInput=(event)=>{
       return (
         <div className="hero">
           <div className="log">
-            <div className="button">
-              <div className="btn" style={{ left: btnLeft }}></div>
+            <div className="button_signup">
+              <div className="lr" style={{ left: btnLeft }}></div>
               <button type="button" className="toggle-btn" onClick={login}>
                <Link to='/Login'>Login</Link>
               </button>

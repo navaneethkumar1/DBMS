@@ -1,12 +1,15 @@
 *{
     overflow-x: hidden;
 }
-.navbar{
+.custom-navbar{
     
     background-color: #FFF7F1;
     height: auto; 
     margin-top: 0;
+    top:0%;
     padding: 3px 0; 
+    position: fixed;
+    /* z-index: 100; */
     position:fixed;
     z-index: 1000;
     width: 100%;
@@ -34,13 +37,13 @@
   color: #FF8911; 
 }  
 
-.head a{
+#head a{
     font-size:3rem;
     text-decoration:none;
     color:#D21312;
     font-weight: bold;
 }
-.head a:hover{
+#head a:hover{
     color:#FC6736;
 }
 .nav >li>a{
