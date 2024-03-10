@@ -45,7 +45,7 @@ alert("not exists");
           <form name='loginform' onSubmit={handleSubmit}>
             <h1 className='admin-login-heading'>ADMIN LOGIN</h1>
             <h3 className='admin-login-label'>Username</h3>
-            <input type='email'  className="search-bar" placeholder='Enter your email' name='Admin_email'onChange={handleInput} ></input>
+            <input type='email'  className="search-bar" placeholder='Enter your email' name='Admin_email'onChange={handleInput} ></input><br/>
             {errors.Admin_email&&<span>{errors.Admin_email}</span>}
             <h3>Password</h3>
             <input type='password' className="search-bar" placeholder='Enter your password' name='Admin_password' onChange={handleInput} ></input><br/>

@@ -45,7 +45,7 @@ import AdminDashboard from './Adminmain/AdminDashboard';
           <Route path='/Platelete' element={<Platelete/>}/>
           <Route path='/Stemcell' element={<Stemcell/>}/>
           <Route path='/Contact'element={<Contact/>}/>
-          <Route path='/Adminmain/Admin' element={<Admin/>}/>
+          <Route path='/Admin' element={<Admin/>}/>
           <Route path='/Adminmain/Sidebar' element={<Sidebar/>}/>
 {/* 
           <Route path="/About" element={<About/>} /> */}

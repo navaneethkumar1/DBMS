@@ -81,4 +81,4 @@ import Sidebar from './Sidebar';
   )
 }
 
- export default AdminDashboard
+ export default AdminDashboard;
