@@ -12,8 +12,8 @@ function Navbar(){
                             <a>BLOOD CENTER</a>
                         </div>
                     <li><Link to='/Home'>HOME</Link></li>
-                    <li>ABOUT US</li>
-                    <li>GALLERY</li>
+                    <li><Link to='/About'>ABOUT US</Link></li>
+                    <li><Link to='/Donate'>DONATE</Link></li>
                     <li><Link to='/Service'>SERVICES</Link></li>
                     <li><Link to='/Contact'>CONTACT</Link></li>
                     </div>

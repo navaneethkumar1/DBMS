@@ -1,5 +1,6 @@
 import '../css/Home.css';
 import Contact from './Contact';
+import Donate from './Donate';
 import Navbar from './Navbar';
 import Service from './Service';
 function Home(){
@@ -11,7 +12,7 @@ function Home(){
 <p>Your Health is our priority</p> 
 </div>
         </div>
-      
+      <Donate/>
         <Service/>
         <Contact/>
         </>
