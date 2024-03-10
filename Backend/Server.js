@@ -59,7 +59,7 @@ db.query(sql,[req.body.user_email,req.body.user_password],(err,data)=>{
 })
 
 //admin
-app.post('/Adminlogin',(req,res)=>{
+app.post('/Admin',(req,res)=>{
 const sql = "SELECT * FROM admin_signup WHERE `Admin_email`= ? AND `Admin_password`= ?";
 
 db.query(sql,[req.body.Admin_email,req.body.Admin_password],(err,data)=>{

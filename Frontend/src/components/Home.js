@@ -5,12 +5,13 @@ import Service from './Service';
 function Home(){
     return(
         <>
-        <Navbar/>
+      <Navbar/>
         <div className="home">
             <div className='home-text'>
 <p>Your Health is our priority</p> 
 </div>
         </div>
+      
         <Service/>
         <Contact/>
         </>

@@ -1,9 +1,12 @@
+
 import React from 'react'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom';
+import  '../css/AdminDashboard.css'
 import Create from './Create';
-import 'bootstrap/dist/css/bootstrap.min.css'
+import Sidebar from './Sidebar';
+// import 'bootstrap/dist/css/bootstrap.min.css'
 
 
  function AdminDashboard() {
@@ -27,9 +30,10 @@ import 'bootstrap/dist/css/bootstrap.min.css'
         <>
 
 <div className="container">
+<Sidebar/>
         <h1>Welcome to admin dashboard</h1>
 
-        <div className='user-list-container'>
+        <div className="user-list-container">
           <div className='user-list'>
             <h2>User list</h2>
 
@@ -37,7 +41,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
               <Create />
             </div>
 
-            <table className='user-table'>
+            <table id='customers'>
               <thead>
                 <tr>
                   <th>ID</th>
@@ -62,9 +66,9 @@ import 'bootstrap/dist/css/bootstrap.min.css'
                     <td>{donation.user_phone}</td>
                     <td>
                       <Link to={`/edit/${donation.user_id}`}>
-                        <button className='edit-button'>Edit</button>
+                        <button className='user_edit_button'>Edit</button>
                       </Link>
-                      <button onClick={() => handleDelete(donation.user_id)} className='delete-button'>Delete</button>
+                      <button onClick={() => handleDelete(donation.user_id)} className='user_delete_button'>Delete</button>
                     </td>
                   </tr>
                 ))}
