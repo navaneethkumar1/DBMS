@@ -1,15 +1,18 @@
 import { useState } from 'react';
 import Navbar from './Navbar';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
+import '../css/Blood.css';
 function Platelete(){
     const [values,setValues]=useState({
-        blood_name:'',
-          blood_age:'',      
-        blood_group:'',
-        blood_gender:'',
-        blood_phone:'',
-        blood_city:''
+        platelete_name:'',
+          Platelete_age:'',      
+        Platelete_group:'',
+        Platelete_gender:'',
+        platelete_phone:'',
+        platelete_city:'',
+        platelete_weight:''
         })
         const navigate=useNavigate() 
         const [errors,setErrors]=useState({})
@@ -18,9 +21,9 @@ function Platelete(){
       }
         const handleSubmit=(event)=>{
           event.preventDefault();
-          axios.post('http://localhost:8081/Blood',values)
+          axios.post('http://localhost:8081/Platelete',values)
         .then(res=>{
-        navigate('/Login');
+        navigate('/Donate');
         
         })
         .catch(err=>console.log(err)); 
@@ -28,16 +31,24 @@ function Platelete(){
       
 return(
     <>
-       <form id="login"  className="grow"  onSubmit={handleSubmit}>
-                <input type="text" className="input-f1" placeholder="username" name="blood_name" onChange={handleInput} required/>
-                <input type="number" className="input-f1" placeholder="age" name="blood_age" onChange={handleInput} required/>
-                <input type="text" className="input-f1" placeholder="blood group" name="blood_group" onChange={handleInput} required/>
-                <input type="text" className="input-f1" placeholder="gender" name="blood_gender" onChange={handleInput} required/>
-                <input type="text" className="input-f1" placeholder="phone" name="blood_phone" onChange={handleInput} required/>
-                <input type="text" className="input-f1" placeholder="city" name="blood_city" onChange={handleInput} required/>
-
-                <button type="submit" className="submit-btn" >Register</button>
+    <div className='blood-main'>
+    <div className='blood-1'>
+       <form id="login"   onSubmit={handleSubmit}>
+        <div className='blood-2'>
+                <input type="text" className="blood-2" placeholder="username" name="platelete_name" onChange={handleInput} required/>
+                <input type="number" className="blood-2" placeholder="age" name="platelete_age" onChange={handleInput} required/>
+                <input type="text" className="blood-2" placeholder="blood group" name="platelete_group" onChange={handleInput} required/>
+                <input type="text" className="blood-2" placeholder="gender" name="platelete_gender" onChange={handleInput} required/>
+                <input type="text" className="blood-2" placeholder="phone" name="platelete_phone" onChange={handleInput} required/>
+                <input type="text" className="blood-2" placeholder="city" name="platelete_city" onChange={handleInput} required/>
+                <input type="text" className="blood-2" placeholder="weight" name="platelete_weight" onChange={handleInput} required/>
+                <br/>
+    <button className='blood-button-1'><Link to='/Donate'>Cancel</Link></button>
+                <button className='blood-button-1' type="submit">Register</button>
+                </div>
             </form>
+            </div>
+            </div>
     </>
 )
 }

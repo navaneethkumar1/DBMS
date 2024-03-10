@@ -98,3 +98,45 @@ app.post('/Blood',(req,res)=>{
         return res.json(data);
     })
 })
+//platelete donation
+
+app.post('/Platelete',(req,res)=>{
+    const sql = "INSERT INTO donate_platelete (`platelete_name`, `platelete_age`, `platelete_group`,`platelete_gender`,`platelete_phone`,`platelete_city`,`platelete_weight`) VALUES (?)";
+
+    const values=[req.body.platelete_name,req.body.platelete_age,req.body.platelete_group,req.body.platelete_gender,req.body.platelete_phone,req.body.platelete_city,req.body.platelete_weight]
+    db.query(sql,[values],(err,data)=>{
+        if(err){
+            console.error("Error executing SQL query:", err);
+            return res.json("error");
+        }
+        return res.json(data);
+    })
+})
+
+//rbc donation
+app.post('/Rbc',(req,res)=>{
+    const sql = "INSERT INTO donate_rbc (`rbc_name`, `rbc_age`, `rbc_group`,`rbc_gender`,`rbc_phone`,`rbc_city`,`rbc_weight`) VALUES (?)";
+
+    const values=[req.body.rbc_name,req.body.rbc_age,req.body.rbc_group,req.body.rbc_gender,req.body.rbc_phone,req.body.rbc_city,req.body.rbc_weight]
+    db.query(sql,[values],(err,data)=>{
+        if(err){
+            console.error("Error executing SQL query:", err);
+            return res.json("error");
+        }
+        return res.json(data);
+    })
+})
+
+//stemcell donation
+app.post('/Stemcell',(req,res)=>{
+    const sql = "INSERT INTO donate_stemcell (`stemcell_name`, `stemcell_age`, `stemcell_group`,`stemcell_gender`,`stemcell_phone`,`stemcell_city`,`stemcell_weight`,`stemcell_diagnosis`) VALUES (?)";
+
+    const values=[req.body.stemcell_name,req.body.stemcell_age,req.body.stemcell_group,req.body.stemcell_gender,req.body.stemcell_phone,req.body.stemcell_city,req.body.stemcell_weight,req.body.stemcell_diagnosis]
+    db.query(sql,[values],(err,data)=>{
+        if(err){
+            console.error("Error executing SQL query:", err);
+            return res.json("error");
+        }
+        return res.json(data);
+    })
+})
