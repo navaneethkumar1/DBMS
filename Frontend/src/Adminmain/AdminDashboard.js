@@ -13,14 +13,14 @@ import Sidebar from './Sidebar';
     const [data, setData] = useState([]);
 
     useEffect(()=>{
-        axios.get('http://localhost:8000/admindashboard')
+        axios.get('http://localhost:8081/admindashboard')
         .then(res =>setData(res.data))
         .catch(err=> console.log(err));
 
      },[])
     
      const handleDelete = (id)=>{
-        axios.delete('http://localhost:8000/delete/'+id)
+        axios.delete('http://localhost:8081/delete/'+id)
         .then(res =>{
             // location.reload();
         })
@@ -38,7 +38,6 @@ import Sidebar from './Sidebar';
             <h2>User list</h2>
 
             <div className=''>
-              <Create />
             </div>
 
             <table id='customers'>

@@ -25,7 +25,7 @@ function Donate(){
     <p>ready to donate??? proceed here...</p>
     </div>
     <div className='donate-5'>
-    <p><button><Link style={{color:'inherit'}} to='/Blood'>Enquire now</Link></button></p>
+    <p><button><Link style={{color:'inherit'}} to='/Blood'>Donate now</Link></button></p>
     </div>
      </div>
   </div>
@@ -39,7 +39,7 @@ function Donate(){
 <p>ready to donate??? proceed here...</p>
 </div>
 <div className='donate-5'>
-    <p><button><Link style={{color:'inherit'}} to='/Rbc'>Enquire now</Link></button></p>
+    <p><button><Link style={{color:'inherit'}} to='/Rbc'>Donate now</Link></button></p>
     </div>
     </div>
   </div>
@@ -54,7 +54,7 @@ function Donate(){
     <div className='donate-4'>
     <p>ready to donate??? proceed here...</p></div>
 <div className='donate-5'>
-    <p><button><Link style={{color:'inherit'}}to='/Platelete'>Enquire now</Link></button></p>
+    <p><button><Link style={{color:'inherit'}}to='/Platelete'>Donate Now</Link></button></p>
     </div>
     </div>
   </div>
@@ -68,7 +68,7 @@ function Donate(){
 <p>ready to donate??? proceed here...</p>
     </div>
     <div className='donate-5'>
-    <p><button><Link  style={{color:'inherit'}}to='/Stemcell'>Enquire now</Link></button></p>
+    <p><button><Link  style={{color:'inherit'}}to='/Stemcell'>Donate now</Link></button></p>
     </div>
     </div>
   </div>

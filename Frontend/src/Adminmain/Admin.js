@@ -27,7 +27,7 @@ const handleSubmit=(event)=>{
   axios.post('http://localhost:8081/Admin',values)
 .then(res=>{
   if(res.data==='success'){
-    navigate('/Dashboard');
+    navigate('/AdminDashboard');
   }
 else{
 alert("not exists");
