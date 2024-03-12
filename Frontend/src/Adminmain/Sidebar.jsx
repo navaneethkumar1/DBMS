@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { FaUser, FaPlus, FaTint, FaChartBar } from 'react-icons/fa';
 import '../css/Sidebar.css';
 
-const Sidebar = () => {
+function Sidebar(){
   return (
     <div className="sidebar">
       <div className="header">Admin</div>

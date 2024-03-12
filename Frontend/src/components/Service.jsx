@@ -30,6 +30,7 @@ import Navbar from './Navbar';
 return(
     <>
     <Navbar/>
+
     <div className='service-heading'>
         <h2>SERVICES</h2>
     

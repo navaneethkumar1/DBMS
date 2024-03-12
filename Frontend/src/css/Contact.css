@@ -49,11 +49,11 @@ padding-bottom: 1px;
     border-radius: 4px;
   }
   
- .message-1>textarea {
+ .message-1 textarea {
     resize: vertical;
   }
   
-  .message-1>button {
+  .message-1 button {
     background-color: #525CEB;
     color: white;
     padding: 10px 5px;
@@ -69,3 +69,70 @@ padding-bottom: 1px;
     background-color: #86B6F6;
   }
   
+#contact-loc{
+  margin-top: 5%;
+  margin-left:10px;
+}
+
+/* footer */
+/* YourComponent.css */
+.footer {
+  background: #1B4242;
+  padding: 30px 0px;
+  font-family: 'Play', sans-serif;
+  text-align: center;
+}
+
+.footer .row {
+  width: 100%;
+  margin: 1% 0%;
+  padding: 0.6% 0%;
+  color: gray;
+  font-size: 0.8em;
+}
+
+.footer .row a {
+  text-decoration: none;
+  color: gray;
+  transition: 0.5s;
+}
+
+.footer .row a:hover {
+  color: #fff;
+}
+
+.footer .row ul {
+  width: 100%;
+}
+
+.footer .row ul li {
+  display: inline-block;
+  margin: 0px 30px;
+}
+
+.footer .row a i {
+  font-size: 2em;
+  margin: 0% 1%;
+}
+
+@media (max-width: 720px) {
+  .footer {
+    text-align: left;
+    padding: 5%;
+  }
+  .footer .row ul li {
+    display: block;
+    margin: 10px 0px;
+    text-align: left;
+  }
+  .footer .row a i {
+    margin: 0% 3%;
+  }
+}
+#cont-img{
+  background-image: url('../images/contact-back.jpg');
+  background-repeat:repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  opacity: 80%;
+}
