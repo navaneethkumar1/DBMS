@@ -12,7 +12,7 @@ function Edit() {
       const navigate = useNavigate();
 
       useEffect(()=>{
-        axios.get('http://localhost:8000/read/'+id)
+        axios.get('http://localhost:8080/read/'+id)
         .then(res =>{
             console.log(res)
             setValues({...values, name: res.data[0].user_name, gender: res.data[0].user_gender, age: res.data[0].user_age, bloodgroup: res.data[0].user_group, address: res.data[0].user_address, phone: res.data[0].user_phone})
@@ -34,7 +34,7 @@ function Edit() {
 
   const handleUpdate = (event)=>{
     event.preventDefault();
-    axios.put('http://localhost:8000/edit/'+id, values)
+    axios.put('http://localhost:8080/edit/'+id, values)
     .then(res=>{
         console.log(res)
         navigate('/adminmain/admindashboard');

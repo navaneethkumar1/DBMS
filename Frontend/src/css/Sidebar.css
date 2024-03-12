@@ -43,11 +43,11 @@ main{
     background:lightskyblue;
     color: #000;
     transition: all 0.5s;
-}
+} 
 .active{
     background: lightskyblue;
     color: #000;
 }
 .icon, .link_text{
     font-size: 20px;
-}
+} 

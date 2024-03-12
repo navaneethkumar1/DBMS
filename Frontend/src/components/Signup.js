@@ -21,7 +21,7 @@ const handleInput=(event)=>{
     setErrors(Signupvalidation(values));
     if(errors.user_name==="" && errors.user_email==="" && errors.user_password===""){
 
-    axios.post('http://localhost:8081/Signup',values)
+    axios.post('http://localhost:8080/Signup',values)
   .then(res=>{
   navigate('/Login');
   

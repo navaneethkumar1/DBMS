@@ -1,17 +1,34 @@
 import axios from 'axios';
 import React from 'react'
 import { useState } from "react";
-import  {Button,Modal } from "react-bootstrap";
 import { useNavigate } from 'react-router-dom';
+import  {Button,Modal } from "react-bootstrap";
 import '../css/Create.css';
+
 
 
 function Create() {
 
-    const [show, setShow] = useState(false);
+  const navigate = useNavigate();
 
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+
+    const [modalOpen, setModalOpen] = useState(false);
+
+    const openModal = () => {
+      setModalOpen(true);
+    };
+  
+    const closeModal = () => {
+      setModalOpen(false);
+    };
+  
+    const closeOutsideModal = (event) => {
+      if (event.target === event.currentTarget) {
+        setModalOpen(false);
+      }
+    };
+  
+  
 
     const [values, setValues]=useState({
         name:'',
@@ -23,14 +40,17 @@ function Create() {
 
     })
 
-    const navigate = useNavigate();
+  
 
     const handleSubmit = (e)=>{
         e.preventDefault()
-        axios.post('http://localhost:8000/donation',values)
+        axios.post('http://localhost:8080/donation',values)
         .then(res=>{
             console.log(res);
-            // navigate('/')
+            setTimeout(() => {
+              // navigate('/AdminDashboard');
+              closeModal();
+            }, 2000);
 
         })
         .catch(err=>console.log(err))
@@ -39,77 +59,78 @@ function Create() {
     }
     
  return (
-    <>
+  <div>
+  
+  <button className='custom-button'  onClick={openModal}>Create </button>
 
-<div className="container_box"></div>
- 
- <Button  className='custom-button'  onClick={handleShow}>Create +</Button>
+  {modalOpen && (
+    <div
+      className="modal"
+      style={{
+        display: 'block',
+        backgroundColor: 'rgba(0, 0, 0, 0.4)',
+      }}
+      onClick={closeOutsideModal}
+    >
+      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+        <span className="close" onClick={closeModal}>&times;</span>
+        <h2>Add user</h2>
 
- <Modal show={show} onHide={handleClose}>
+      <form onSubmit={handleSubmit}>
+ <div className="mb-3 row">
+    <label className="col-sm-2">Username</label>
+    <div className="col-sm-10">
+    <input type="text" name="name" className="form-control" onChange={e=>setValues({...values,name: e.target.value})} />
+ </div>
+ </div>
 
-<Modal.Header closeButton>
-  <Modal.Title>Add user</Modal.Title>
-</Modal.Header>
-<Modal.Body>
+  <div className="mb-3 row">
+    <label className="col-sm-2">Gender</label>
+   <div className="col-sm-10">
+      <input type="text" name="gender" className="form-control" onChange={e=>setValues({...values,gender: e.target.value})} />
+    </div>
+  </div>
 
-  <form onSubmit={handleSubmit}>
-    <div className="mb-3 row">
-      <label className="col-sm-2">Username</label>
-      <div className="col-sm-10">
-        <input type="text" name="name" className="form-control" onChange={e=>setValues({...values,name: e.target.value})}/>
+  <div className="mb-3 row">
+    <label className="col-sm-2">Age</label>
+   <div className="col-sm-10">
+      <input type="text" name="age" className="form-control" onChange={e=>setValues({...values,age: e.target.value})} />
+    </div>
+  </div>
+
+  <div className="mb-3 row">
+    <label className="col-sm-2">Blood Group</label>
+<div className="col-sm-10">
+    <input type="text" name="bloodgroup" className="form-control" onChange={e=>setValues({...values,bloodgroup: e.target.value})}/>
+  </div>
+</div>
+
+<div className="mb-3 row">
+  <label className="col-sm-2">Address</label>
+  <div className="col-sm-10">
+    <input type="text" name="address" className="form-control" onChange={e=>setValues({...values,address: e.target.value})} />
+  </div>
+</div>
+
+<div className="mb-3 row">
+  <label className="col-sm-2">Phone</label>
+  <div className="col-sm-10">
+    <input type="text" name="phone" className="form-control" onChange={e=>setValues({...values,phone: e.target.value})} />
+  </div>
+</div>
+
+
+  <Button variant="primary" className="add_button"  onClick={(e) => { e.preventDefault(); handleSubmit(e); }}> Add user</Button>
+
+
+ </form>
+
       </div>
     </div>
+  )}
+</div>
+);
+};
 
-    <div className="mb-3 row">
-      <label className="col-sm-2">Gender</label>
-      <div className="col-sm-10">
-        <input type="text" name="gender" className="form-control" onChange={e=>setValues({...values,gender: e.target.value})} />
-      </div>
-    </div>
-
-    <div className="mb-3 row">
-      <label className="col-sm-2">Age</label>
-      <div className="col-sm-10">
-        <input type="text" name="age" className="form-control" onChange={e=>setValues({...values,age: e.target.value})} />
-      </div>
-    </div>
-
-    <div className="mb-3 row">
-      <label className="col-sm-2">Blood Group</label>
-      <div className="col-sm-10">
-        <input type="text" name="bloodgroup" className="form-control" onChange={e=>setValues({...values,bloodgroup: e.target.value})}/>
-      </div>
-    </div>
-
-    <div className="mb-3 row">
-      <label className="col-sm-2">Address</label>
-      <div className="col-sm-10">
-        <input type="text" name="address" className="form-control" onChange={e=>setValues({...values,address: e.target.value})} />
-      </div>
-    </div>
-
-    <div className="mb-3 row">
-      <label className="col-sm-2">Phone</label>
-      <div className="col-sm-10">
-        <input type="text" name="phone" className="form-control" onChange={e=>setValues({...values,phone: e.target.value})} />
-      </div>
-    </div>
-
-    <Modal.Footer>
-      <Button variant="secondary" onClick={handleClose}>
-        Close
-      </Button>
-      <Button variant="primary" onClick={(e) => { e.preventDefault(); handleClose(); handleSubmit(e); }}> Add user</Button>
-
-
-    </Modal.Footer>
-  </form>
-</Modal.Body>
-</Modal>
-
-      
-</>
-    )
-}
 export default Create
 

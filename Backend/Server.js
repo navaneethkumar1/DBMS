@@ -67,6 +67,15 @@ db.query(sql,[req.body.user_email,req.body.user_password],(err,data)=>{
     }
 })
 })
+
+app.get('/signup',(req,res)=>{
+    const sql="SELECT *FROM signup";
+    db.query(sql, (err,result)=>{
+        if(err) return res.json({Message:"error in server"});
+        return res.json(result);
+
+    })
+})
 //admin login 
 app.post('/Admin',(req,res)=>{
 const sql = "SELECT * FROM admin_signup WHERE `Admin_email`= ? AND `Admin_password`= ?";
@@ -84,6 +93,8 @@ db.query(sql,[req.body.Admin_email,req.body.Admin_password],(err,data)=>{
     }
 })
 })
+
+
 
 app.get('/admindashboard',(req,res)=>{
     const sql="SELECT *FROM donation";
@@ -162,7 +173,7 @@ app.post('/Blood',(req,res)=>{
         return res.json(data);
     })
 })
-//platelete donation
+// platelete donation
 
 app.post('/Platelete',(req,res)=>{
     const sql = "INSERT INTO donate_platelete (`platelete_name`, `platelete_age`, `platelete_group`,`platelete_gender`,`platelete_phone`,`platelete_city`,`platelete_weight`) VALUES (?)";
@@ -177,7 +188,7 @@ app.post('/Platelete',(req,res)=>{
     })
 })
 
-//rbc donation
+// rbc donation
 app.post('/Rbc',(req,res)=>{
     const sql = "INSERT INTO donate_rbc (`rbc_name`, `rbc_age`, `rbc_group`,`rbc_gender`,`rbc_phone`,`rbc_city`,`rbc_weight`) VALUES (?)";
 
@@ -191,7 +202,7 @@ app.post('/Rbc',(req,res)=>{
     })
 })
 
-//stemcell donation
+// stemcell donation
 app.post('/Stemcell',(req,res)=>{
     const sql = "INSERT INTO donate_stemcell (`stemcell_name`, `stemcell_age`, `stemcell_group`,`stemcell_gender`,`stemcell_phone`,`stemcell_city`,`stemcell_weight`,`stemcell_diagnosis`) VALUES (?)";
 
@@ -206,7 +217,7 @@ app.post('/Stemcell',(req,res)=>{
 })
 
 
-app.listen(8000,()=>{
+app.listen(8080,()=>{
     console.log("listening");
 })
 

@@ -13,14 +13,14 @@ import Sidebar from './Sidebar';
     const [data, setData] = useState([]);
 
     useEffect(()=>{
-        axios.get('http://localhost:8000/admindashboard')
+        axios.get('http://localhost:8080/admindashboard')
         .then(res =>setData(res.data))
         .catch(err=> console.log(err));
 
      },[])
     
      const handleDelete = (id)=>{
-        axios.delete('http://localhost:8000/delete/'+id)
+        axios.delete('http://localhost:8080/delete/'+id)
         .then(res =>{
             // location.reload();
         })
