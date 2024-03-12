@@ -6,18 +6,34 @@ import { Link } from 'react-router-dom';
 import  '../css/AdminDashboard.css'
 import Create from './Create';
 import Sidebar from './Sidebar';
-// import 'bootstrap/dist/css/bootstrap.min.css'
 
 
  function AdminDashboard() {
+
     const [data, setData] = useState([]);
-
-    useEffect(()=>{
-        axios.get('http://localhost:8080/admindashboard')
-        .then(res =>setData(res.data))
-        .catch(err=> console.log(err));
-
-     },[])
+        const [groupCounts, setGroupCounts] = useState({});
+    
+        useEffect(() => {
+          const fetchData = async () => {
+            try {
+              const response = await axios.get('http://localhost:8080/admindashboard');
+              console.log(response.data);
+              setData(response.data);
+      
+              // Calculate counts for each user_group
+              const counts = response.data.reduce((acc, donation) => {
+                acc[donation.user_group] = (acc[donation.user_group] || 0) + 1;
+                return acc;
+              }, {});
+              setGroupCounts(counts);
+            } catch (error) {
+              console.error('Error fetching data:', error.message);
+            }
+          };
+      
+          fetchData();
+        }, []);
+      
     
      const handleDelete = (id)=>{
         axios.delete('http://localhost:8080/delete/'+id)
@@ -38,7 +54,6 @@ import Sidebar from './Sidebar';
             <h2>User list</h2>
 
             <div className=''>
-              <Create />
             </div>
 
             <table id='customers'>
@@ -76,9 +91,37 @@ import Sidebar from './Sidebar';
             </table>
           </div>
         </div>
+
+        
+        <div className='groupsCount'>
+              <h2>Blood Group list</h2>
+              <table id="bloodGroups">
+                <thead>
+                  <tr>
+                    <th>Blood Group</th>
+                    <th>Count</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {Object.keys(groupCounts).map((group, index) => (
+                    <tr key={index}>
+                      <td>{group}</td>
+                      <td>{groupCounts[group]}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+         
       </div>
     </>
   )
 }
 
- export default AdminDashboard
+ export default AdminDashboard;
+
+
+
+
+

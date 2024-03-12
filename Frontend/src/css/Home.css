@@ -1,17 +1,18 @@
 .home{
-    background-image: url('../images/blood-background.jpg');
+    background-image: url('../images/main-wallpaper.jpg');
 background-repeat:repeat;
 background-attachment: scroll;
-background-size: cover; 
-height: 100vh;
-image-rendering:optimizeQuality;
+background-size: contain; 
+height:90vh;
 
 }
 .home p{
-    font-size: 5rem;
+    font-size: 60px;
+    color: #124076;
     position: absolute;
-    left: 28rem;
-    top:10rem;
+    left: 42rem;
+    top:15rem;
     display: flex;
     justify-content: center;
+    font-family:Arial, Helvetica, sans-serif;
 }

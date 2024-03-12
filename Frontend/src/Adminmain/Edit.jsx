@@ -37,7 +37,7 @@ function Edit() {
     axios.put('http://localhost:8080/edit/'+id, values)
     .then(res=>{
         console.log(res)
-        navigate('/adminmain/admindashboard');
+        navigate('/admindashboard');
     }).catch(err=>console.log(err));
 }
 
@@ -45,7 +45,7 @@ function Edit() {
 // for pop up window
    
     const handleClose=()=>{
-      navigate('/adminmain/admindashboard');
+      navigate('/admindashboard');
     }
  
 

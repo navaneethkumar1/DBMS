@@ -1,6 +1,10 @@
 *{
     overflow-x: hidden;
 }
+
+.logoname{
+    color: black;
+}
 .custom-navbar{
     
     background-color: #FFF7F1;

@@ -23,7 +23,8 @@ const handleInput=(event)=>{
 
     axios.post('http://localhost:8080/Signup',values)
   .then(res=>{
-  navigate('/Login');
+    alert('signup success')
+  navigate('/Home');
   
   })
   .catch(err=>console.log(err)); 

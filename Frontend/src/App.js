@@ -17,17 +17,15 @@ import Read from './Adminmain/Read';
 import Edit from './Adminmain/Edit';
 import Sidebar from './Adminmain/Sidebar';
 import Create from './Adminmain/Create';
+import Donorlist from './Adminmain/Donorlist';
+import Requestedlist from './Adminmain/Requestedlist'
+import Requestblood from './components/Requestblood';
 // import About from './Adminmain/About';
-import Comment from './Adminmain/Comment';
-import Analytics from './Adminmain/Analytics'
-import Product from './Adminmain/Product';
-import ProductList from './Adminmain/ProductList';
+// import Comment from './Adminmain/Comment';
+// import Analytics from './Adminmain/Analytics'
+// import Product from './Adminmain/Product';
+// import ProductList from './Adminmain/ProductList';
 import AdminDashboard from './Adminmain/AdminDashboard';
-
-
-
-
-
 
 
   function App() {
@@ -48,16 +46,16 @@ import AdminDashboard from './Adminmain/AdminDashboard';
           <Route path='/Stemcell' element={<Stemcell/>}/>
           <Route path='/Contact'element={<Contact/>}/>
           <Route path='/Admin' element={<Admin/>}/>
-          <Route path='/Sidebar' element={<Sidebar/>}/>
-{/* 
-          <Route path="/About" element={<About/>} /> */}
-          <Route path="/Comment" element={<Comment />} />
-          <Route path="/Analytics" element={<Analytics />} />
-          <Route path="/Product" element={<Product />} />
-          <Route path="/ProductList" element={<ProductList/>}/>
+           <Route path='/Sidebar' element={<Sidebar/>}/>
+           <Route path='/Donorlist' element={<Donorlist/>}/>
+
+           <Route path='/Requestedlist'element={<Requestedlist/>}/>
+           
+          <Route path="/Create" element={<Create/>} />
+          {/* <Route path="/Analytics" element={<Analytics />} /> */}
+          {/* <Route path="/Product" element={<Product />} /> */}
+          {/* <Route path="/ProductList" element={<ProductList/>}/> */}
           <Route path='/AdminDashboard' element={<AdminDashboard/>}/>
-         
-          
           <Route path='/read/:id' element={<Read/>} />
           <Route path='/edit/:id' element={<Edit/>} />
 

@@ -159,18 +159,60 @@ app.delete('/delete/:id',(req,res)=>{
 
 })
 
+
+//requesting
+
+app.get('/requestblood',(req,res)=>{
+    const sql="SELECT *FROM req_blood";
+    db.query(sql, (err,result)=>{
+        if(err) return res.json({Message:"error in server"});
+        return res.json(result);
+
+    })
+})
+
+app.post('/requestblood',(req,res)=>{
+    const sql="INSERT INTO req_blood (`patient_name`,`patient_age`,`patient_gender`,`patient_phone`,`patient_address`,`patient_group`,`patient_unit`,`patient_hospital`) VALUES (?)";
+    console.log(req.body)
+    const values = [
+        req.body.name,
+        req.body.age,
+        req.body.gender,
+        req.body.phone,
+        req.body.address,
+        req.body.group,
+        req.body.unit,
+        req.body.hospital,
+    
+    ]
+      db.query(sql, [values], (err,result)=>{
+        if(err) return res.json(err);
+        return res.json(result);
+      })
+})
+
+
 // donate blood
 
-app.post('/Blood',(req,res)=>{
-    const sql = "INSERT INTO donate_blood (`blood_name`, `blood_age`, `blood_group`,`blood_gender`,`blood_phone`,`blood_city`) VALUES (?)";
+app.post('/donateblood',(req,res)=>{
+    const sql = "INSERT INTO donate_blood (`donor_name`, `donor_age`, `donor_group`,`donor_gender`,`donor_phone`,`donor_address`) VALUES (?)";
 
-    const values=[req.body.blood_name,req.body.blood_age,req.body.blood_group,req.body.blood_gender,req.body.blood_phone,req.body.blood_city]
+    const values=[req.body.donor_name,req.body.donor_age,req.body.donor_group,req.body.donor_gender,req.body.donor_phone,req.body.donor_address]
     db.query(sql,[values],(err,data)=>{
         if(err){
             console.error("Error executing SQL query:", err);
             return res.json("error");
         }
         return res.json(data);
+    })
+})
+
+app.get('/donateblood',(req,res)=>{
+    const sql="SELECT *FROM donate_blood";
+    db.query(sql, (err,result)=>{
+        if(err) return res.json({Message:"error in server"});
+        return res.json(result);
+
     })
 })
 // platelete donation
