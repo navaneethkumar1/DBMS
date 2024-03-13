@@ -3,6 +3,7 @@ import React, { useEffect } from 'react'
 import { useState } from "react";
 import  {Button} from "react-bootstrap";
 import { useNavigate, useParams } from 'react-router-dom';
+import '../css/Edit.css'
 
 
 function Edit() {
@@ -106,9 +107,9 @@ function Edit() {
         </div>
         </div>
       
-        <div className="col-sm-2">
-        <Button variant="secondary" onClick={handleClose}>Close </Button>
-        <Button variant="primary" onClick={handleUpdate}>Update</Button>
+        <div className="c-button">
+        <Button variant="secondary"  className='Dsubmit'  onClick={handleClose}>Close </Button>
+        <Button variant="primary" className='Dsubmit'   onClick={handleUpdate}>Update</Button>
         </div>
          
     </form>

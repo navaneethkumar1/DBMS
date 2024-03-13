@@ -28,7 +28,9 @@ function Create() {
   };
 
   return (
-    <div className="container_box">
+    <div className="background">
+      <div className='create-box'>
+      <div className="container_box">
       <form onSubmit={handleSubmit}>
         <div className="mb-3 row">
           <label className="col-sm-2">Username</label>
@@ -101,15 +103,15 @@ function Create() {
             />
           </div>
         </div>
-
-        <div className="mb-3 row">
-          <div className="col-sm-10">
-            <button type="submit">Add User</button>
-          </div>
+          
+            <div >
+                <button className='Dsubmit' type="submit">Add User</button>
+            
+            </div>
+          </form>
         </div>
-      </form>
+      </div>
     </div>
   );
 }
-
 export default Create;

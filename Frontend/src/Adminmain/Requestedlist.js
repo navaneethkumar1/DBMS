@@ -92,6 +92,7 @@ const DonorTable = () => {
             <th>Patient Gender</th>
             <th>Patient Phone</th>
              <th>Patient Address</th>
+             <th>Patient Hospital</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -104,6 +105,7 @@ const DonorTable = () => {
                <td>{Patient.patient_gender}</td>
                <td>{Patient.patient_phone}</td>
                <td>{Patient.patient_address}</td>
+               <td>{Patient.patient_hospital}</td>
              </tr>
            ))}
 			</tbody>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import '../css/Requestblood.css';
 import Navbar from './Navbar';
+import { Navigate, useNavigate } from 'react-router-dom';
 
  function Requestblood() {
 
@@ -16,21 +17,27 @@ import Navbar from './Navbar';
           hospital:'',
         
         });
-
+const navigate=useNavigate();
         const handleSubmit = (e) => {
             e.preventDefault();
             axios
               .post('http://localhost:8080/requestblood', values)
               .then((res) => {
                 console.log(res);
-            //   navigate('/AdminDashboard')
+                alert('requested successfully');
+            navigate('/Home')
               })
               .catch((err) => console.log(err));
           };
 
     return (
         <>
-        <div>
+        <Navbar/>
+        <div className='request-image'>
+          
+        </div>
+        <div className='request-blood-2'>
+        <div className='requestform_blood'>
      <form onSubmit={handleSubmit}>
     <label for="fname">First Name</label>
     <input className='Request_form' type="text" id="fname" name="name"  onChange={(e) => setValues({ ...values, name: e.target.value })}  placeholder="Your name.."/>
@@ -58,6 +65,7 @@ import Navbar from './Navbar';
 
     <button className='Request_button' type='submit'>submit</button>
   </form>
+</div>
 </div>
 
         </>

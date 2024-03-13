@@ -50,12 +50,10 @@ import Sidebar from './Sidebar';
       
 
         <div className="user-list-container">
+          
           <div className='user-list'>
           <h1>Welcome to admin dashboard</h1>
             <h2>User list</h2>
-
-            <div className=''>
-            </div>
 
             <table id='customers'>
               <thead>
@@ -91,15 +89,14 @@ import Sidebar from './Sidebar';
               </tbody>
             </table>
           </div>
-        </div>
 
-        
+          
         <div className='groupsCount'>
               <table id="bloodGroups">
                 <thead>
                   <tr>
                     <th>Blood Group</th>
-                    <th>Count</th>
+                    <th>Unit</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -113,6 +110,9 @@ import Sidebar from './Sidebar';
               </table>
             </div>
 
+        </div>
+
+        
          
       </div>
     </>

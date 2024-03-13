@@ -41,7 +41,7 @@ function Donate(){
 <p>ready to donate??? proceed here...</p>
 </div>
 <div className='donate-5'>
-    <p><button><Link style={{color:'inherit'}} to='/Rbc'>Donate now</Link></button></p>
+    <p><button>Donate Now</button></p>
     </div>
     </div>
   </div>
@@ -56,7 +56,7 @@ function Donate(){
     <div className='donate-4'>
     <p>ready to donate??? proceed here...</p></div>
 <div className='donate-5'>
-    <p><button><Link style={{color:'inherit'}}to='/Platelete'>Donate Now</Link></button></p>
+    <p><button>Donate Now</button></p>
     </div>
     </div>
   </div>
@@ -70,7 +70,7 @@ function Donate(){
 <p>ready to donate??? proceed here...</p>
     </div>
     <div className='donate-5'>
-    <p><button><Link  style={{color:'inherit'}}to='/Stemcell'>Donate now</Link></button></p>
+    <p><button>Donate now</button></p>
     </div>
     </div>
   </div>

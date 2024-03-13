@@ -22,9 +22,9 @@ const handleInput=(event)=>{
 const handleSubmit=(event)=>{
   event.preventDefault();
   setErrors(Adminvalidation(values));
-  if(errors.Admin_email==="" && errors.Admin_password===""){
+  // if(errors.Admin_email==="" && errors.Admin_password===""){
 
-  axios.post('http://localhost:8081/Admin',values)
+  axios.post('http://localhost:8080/Admin',values)
 .then(res=>{
   if(res.data==='success'){
     navigate('/AdminDashboard');
@@ -35,7 +35,7 @@ alert("not exists");
 
 })
 .catch(err=>console.log(err)); 
-}
+
 }
     return(
         <>
@@ -49,7 +49,7 @@ alert("not exists");
             {errors.Admin_email&&<span>{errors.Admin_email}</span>}
             <h3>Password</h3>
             <input type='password' className="search-bar" placeholder='Enter your password' name='Admin_password' onChange={handleInput} ></input><br/>
-           {errors.Admin_password&& <span>{errors.Admin_password}</span>}
+           {/* {errors.Admin_password&& <span>{errors.Admin_password}</span>} */}
             <div className='admin_button'>
                 <button type='submit' className='button-main'>LOGIN</button>
             </div>
