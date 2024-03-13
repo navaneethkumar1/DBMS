@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import '../css/Navbar.css'
-function Navbar(){
+function Navbar({ userEmail}){
     return(
         <>
         <div className="header">
@@ -16,7 +16,14 @@ function Navbar(){
                     <li><Link to='/Donate'>DONATE</Link></li>
                     <li><Link to='/Service'>SERVICES</Link></li>
                     <li><Link to='/Contact'>CONTACT</Link></li>
+                    <li><Link to='/Requestblood'>REQUEST BLOOD</Link></li>
+                 
                     </div>
+                    {/* <div className="user-info">
+                    <p className="logoname">Welcome,{userEmail}</p>
+        
+       </div> */}
+                    
                 </ul>
             </div>
         </div>
@@ -24,3 +31,28 @@ function Navbar(){
     );
 }
 export default Navbar;
+
+
+
+
+
+// function Navbar({ userEmail }) {
+//   return (
+//     <div className="navbar">
+//       <div className="logo">
+//         <h1>Healthcare</h1>
+//       </div>
+//       <div className="nav-links">
+//         <a href="/">Home</a>
+//         <a href="/Contact">Contact</a>
+//         <a href="/Donate">Donate</a>
+//         <a href="/Service">Service</a>
+//       </div>
+//       <div className="user-info">
+        
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default Navbar;

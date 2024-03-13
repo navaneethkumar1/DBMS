@@ -7,6 +7,7 @@
     left: 0;
     background-color: #333;
     padding-top: 20px;
+    
   }
   
   .header {
@@ -31,6 +32,8 @@
   
   .text {
     font-size: 16px;
+    color: aliceblue;
+    
   }
   
   .nav-item:hover {
