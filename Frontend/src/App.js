@@ -23,8 +23,7 @@ import Analytics from './Adminmain/Analytics'
 import Product from './Adminmain/Product';
 import ProductList from './Adminmain/ProductList';
 import AdminDashboard from './Adminmain/AdminDashboard';
-
-
+import Footer from './components/Footer';
 
 
 
@@ -51,7 +50,7 @@ import AdminDashboard from './Adminmain/AdminDashboard';
           <Route path="/Create" element={<Create/>} />
           {/* <Route path="/Analytics" element={<Analytics />} /> */}
           {/* <Route path="/Product" element={<Product />} /> */}
-          {/* <Route path="/ProductList" element={<ProductList/>}/> */}
+<Route path='/Footer' element={<Footer/>}/>
           <Route path='/AdminDashboard' element={<AdminDashboard/>}/>
           <Route path='/read/:id' element={<Read/>} />
           <Route path='/edit/:id' element={<Edit/>} />

@@ -10,11 +10,14 @@ function Home(){
       <Navbar/>
         <div className="home">
             <div className='home-text'>
-<p style={{ fontFamily: 'Madimi One, sans-serif' }}>Your Health is our priority</p> 
+<p id='home-font'>Your Health is our priority</p> 
 </div>
 <div className='home-button'>
   <button  className="home-button-1" onClick={Service}>Explore NOw</button>
 </div>
+        </div>
+        <div id="abt">
+        <About/>
         </div>
       <Donate/>
         <Service/>

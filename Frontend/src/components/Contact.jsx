@@ -7,6 +7,7 @@ import phone from '../images/phone-solid.svg';
 import Navbar from './Navbar';
 // Import Font Awesome CSS in your component or entry file
 import 'font-awesome/css/font-awesome.min.css';
+import Footer from './Footer';
 
 function Contact() {
   const [state, handleSubmit] = useForm("mnqezoll");
@@ -26,6 +27,7 @@ function Contact() {
   return (
     <>
       <Navbar />
+      <div id='contactus'>
       <div id='cont-img'>
       <div className='contactus'>
         <p className='contact-heading'>CONTACT US</p>
@@ -37,11 +39,11 @@ function Contact() {
             </div>
             <div className='message-email'>
               <img src={email} alt='email' width='40px' height='80px' className='message-image1' />
-              <p className='message-image'>bloodcenter@gmail.com</p>
+              <p className='message-image' id='contact-email'>bloodcenter@gmail.com</p>
             </div>
             <div className='message-phone'>
               <img src={phone} alt='phone' width='40px' height='80px' className='message-image1' />
-              <p className='message-image'>6238506956</p>
+              <p className='message-image' id='contact-no'>6238506956</p>
             </div>
           </div>
           <div className='message-1'>
@@ -57,28 +59,9 @@ function Contact() {
           </div>
         </div>
       </div>
-      <footer className="footer">
-      <div className="row">
-        <a href="#"><i className="fa fa-facebook"></i></a>
-        <a href="#"><i className="fa fa-instagram"></i></a>
-        <a href="#"><i className="fa fa-whatsapp"></i></a>
-        <a href="#"><i className="fa fa-twitter"></i></a>
-      </div>
-
-      <div className="row">
-        <ul>
-          <li><a href="#">Contact us</a></li>
-          <li><a href="#">Our Services</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms & Conditions</a></li>
-        </ul>
-      </div>
-
-      <div className="row">
-        Copyright © 2024 BloodBank - All rights reserved || Designed By: BloodBank Team
-      </div>
-    </footer>
     </div>
+    </div>
+    <Footer/>
     </>
   );
 }
