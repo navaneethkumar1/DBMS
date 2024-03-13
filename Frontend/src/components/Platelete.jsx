@@ -21,7 +21,7 @@ function Platelete(){
       }
         const handleSubmit=(event)=>{
           event.preventDefault();
-          axios.post('http://localhost:8081/Platelete',values)
+          axios.post('http://localhost:8080/Platelete',values)
         .then(res=>{
         navigate('/Donate');
         

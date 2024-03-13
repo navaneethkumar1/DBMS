@@ -10,9 +10,18 @@ height:90vh;
     font-size: 60px;
     color: #124076;
     position: absolute;
-    left: 42rem;
-    top:15rem;
+    left: 43rem;
+    top:6rem;
     display: flex;
     justify-content: center;
-    font-family:Arial, Helvetica, sans-serif;
+    
+}
+.home button{
+margin-top: 20rem;
+margin-left: 50rem;
+padding: 2em;
+border-radius:5em;
+}
+.home-font{
+    font-family: "Audiowide", sans-serif;
 }

@@ -22,7 +22,7 @@ function Rbc(){
       }
         const handleSubmit=(event)=>{
           event.preventDefault();
-          axios.post('http://localhost:8081/Rbc',values)
+          axios.post('http://localhost:8080/Rbc',values)
         .then(res=>{
         navigate('/Donate');
         

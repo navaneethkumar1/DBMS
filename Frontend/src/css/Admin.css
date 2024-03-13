@@ -71,7 +71,10 @@
     cursor: pointer;
   }
   
-  
+.abt-flex{
+  display: flex;
+  flex-direction: column;
+}
 
   
   

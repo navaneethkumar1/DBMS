@@ -8,9 +8,9 @@ import { MdBloodtype } from "react-icons/md";
 
 
 // const Sidebar = () => {
-    function Sidebar(){
 
 
+function Sidebar(){
   return (
     <div className="sidebar">
      <div className="header"> Admin Panel</div>

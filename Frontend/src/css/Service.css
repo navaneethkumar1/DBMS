@@ -1,5 +1,5 @@
 .service-heading{
-    margin-top: 6em;
+    margin-top: 4em;
 }
 .service-1{
     margin-top: 3%;
@@ -16,7 +16,7 @@
 .service-2{
     border:1px solid #FFEEF4;
     margin: 0px 8%;
-    background-color:#F5F5F5;
+    background-color:#D8D9DA;
     border-radius: 35px;
     padding-bottom: 30px;
 }
