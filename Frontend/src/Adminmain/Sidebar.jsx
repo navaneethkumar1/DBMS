@@ -15,10 +15,6 @@ import { MdBloodtype } from "react-icons/md";
     //     navigate('/Donorlist');
     //   };
 
-<<<<<<< HEAD
-function Sidebar(){
-=======
->>>>>>> bb569aafe197ff4c7077b2e05245d502659e4da4
   return (
     <div className="sidebar">
      <div className="header"> Admin Panel</div>

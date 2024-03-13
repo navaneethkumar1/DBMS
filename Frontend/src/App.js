@@ -26,13 +26,7 @@ import Requestblood from './components/Requestblood';
 // import Product from './Adminmain/Product';
 // import ProductList from './Adminmain/ProductList';
 import AdminDashboard from './Adminmain/AdminDashboard';
-<<<<<<< HEAD
 import Footer from './components/Footer';
-
-
-=======
->>>>>>> bb569aafe197ff4c7077b2e05245d502659e4da4
-
 
   function App() {
     return (
@@ -56,7 +50,7 @@ import Footer from './components/Footer';
            <Route path='/Donorlist' element={<Donorlist/>}/>
 
            <Route path='/Requestedlist'element={<Requestedlist/>}/>
-           
+           <Route path ='/Requestblood' element={<Requestblood/>}/>
           <Route path="/Create" element={<Create/>} />
           {/* <Route path="/Analytics" element={<Analytics />} /> */}
           {/* <Route path="/Product" element={<Product />} /> */}

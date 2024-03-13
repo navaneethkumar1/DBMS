@@ -32,7 +32,7 @@ return(
     <Navbar/>
 
     <div className='service-heading'>
-        <h2>SERVICES</h2>
+        <p>SERVICES</p>
     
     </div>
     <Carousel responsive={responsive}   itemClass="carousel-item-padding" >

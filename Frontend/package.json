@@ -9,13 +9,10 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.6.7",
     "bootstrap": "^5.3.3",
-<<<<<<< HEAD
-    "font-awesome": "^4.7.0",
-=======
     "datatables.net": "^2.0.2",
     "datatables.net-dt": "^2.0.2",
+    "font-awesome": "^4.7.0",
     "jquery": "^3.7.1",
->>>>>>> bb569aafe197ff4c7077b2e05245d502659e4da4
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.1",
     "react-data-table-component": "^7.6.2",
@@ -25,6 +22,7 @@
     "react-router-dom": "^6.22.1",
     "react-scripts": "5.0.1",
     "react-table": "^7.8.0",
+    "reactstrap": "^9.2.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

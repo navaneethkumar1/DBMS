@@ -5,7 +5,6 @@ import location from '../images/location-dot-solid.svg';
 import email from '../images/envelope-solid.svg';
 import phone from '../images/phone-solid.svg';
 import Navbar from './Navbar';
-// Import Font Awesome CSS in your component or entry file
 import 'font-awesome/css/font-awesome.min.css';
 import Footer from './Footer';
 
