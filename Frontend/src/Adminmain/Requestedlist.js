@@ -80,8 +80,9 @@ const DonorTable = () => {
   }, []);
 
   return (
-
-<table class="request_user">
+     <div>
+      <h1 className='request_header'>Requested User</h1>
+<table className="request_user">
 	<thead>
 		<tr>
         <th>Patient ID</th>
@@ -107,6 +108,7 @@ const DonorTable = () => {
            ))}
 			</tbody>
 </table>
+</div>
 
 
   );

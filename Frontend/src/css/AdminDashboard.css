@@ -3,6 +3,17 @@
   }
    */
 
+
+   .user-list-container{
+    margin-left: 30%;
+    align-items: center;
+   }
+
+   .groupsCount{
+    margin-top:80px;
+
+   }
+
    #customers {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;

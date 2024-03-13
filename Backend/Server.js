@@ -215,20 +215,6 @@ app.get('/donateblood',(req,res)=>{
 
     })
 })
-// platelete donation
-
-app.post('/Platelete',(req,res)=>{
-    const sql = "INSERT INTO donate_platelete (`platelete_name`, `platelete_age`, `platelete_group`,`platelete_gender`,`platelete_phone`,`platelete_city`,`platelete_weight`) VALUES (?)";
-
-    const values=[req.body.platelete_name,req.body.platelete_age,req.body.platelete_group,req.body.platelete_gender,req.body.platelete_phone,req.body.platelete_city,req.body.platelete_weight]
-    db.query(sql,[values],(err,data)=>{
-        if(err){
-            console.error("Error executing SQL query:", err);
-            return res.json("error");
-        }
-        return res.json(data);
-    })
-})
 
 // rbc donation
 app.post('/Rbc',(req,res)=>{

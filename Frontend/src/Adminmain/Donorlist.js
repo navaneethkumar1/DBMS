@@ -141,7 +141,7 @@ function Donorlist() {
     },
     {
       name: 'City',
-      selector: row => row.donor_city,
+      selector: row => row.donor_address,
       sortable: true
     }
   ];

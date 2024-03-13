@@ -47,10 +47,11 @@ import Sidebar from './Sidebar';
 
 <div className="container">
 <Sidebar/>
-        <h1>Welcome to admin dashboard</h1>
+      
 
         <div className="user-list-container">
           <div className='user-list'>
+          <h1>Welcome to admin dashboard</h1>
             <h2>User list</h2>
 
             <div className=''>
@@ -94,7 +95,6 @@ import Sidebar from './Sidebar';
 
         
         <div className='groupsCount'>
-              <h2>Blood Group list</h2>
               <table id="bloodGroups">
                 <thead>
                   <tr>
