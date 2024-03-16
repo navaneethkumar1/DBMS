@@ -92,6 +92,7 @@ import Sidebar from './Sidebar';
 
           
         <div className='groupsCount'>
+          
               <table id="bloodGroups">
                 <thead>
                   <tr>
