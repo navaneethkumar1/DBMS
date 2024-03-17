@@ -67,6 +67,15 @@ db.query(sql,[req.body.user_email,req.body.user_password],(err,data)=>{
     }
 })
 })
+
+app.get('/signup',(req,res)=>{
+    const sql="SELECT *FROM signup";
+    db.query(sql, (err,result)=>{
+        if(err) return res.json({Message:"error in server"});
+        return res.json(result);
+
+    })
+})
 //admin login 
 app.post('/Admin',(req,res)=>{
 const sql = "SELECT * FROM admin_signup WHERE `Admin_email`= ? AND `Admin_password`= ?";
@@ -84,6 +93,8 @@ db.query(sql,[req.body.Admin_email,req.body.Admin_password],(err,data)=>{
     }
 })
 })
+
+
 
 app.get('/admindashboard',(req,res)=>{
     const sql="SELECT *FROM donation";
@@ -148,26 +159,45 @@ app.delete('/delete/:id',(req,res)=>{
 
 })
 
+
+//requesting
+
+app.get('/requestblood',(req,res)=>{
+    const sql="SELECT *FROM req_blood";
+    db.query(sql, (err,result)=>{
+        if(err) return res.json({Message:"error in server"});
+        return res.json(result);
+
+    })
+})
+
+app.post('/requestblood',(req,res)=>{
+    const sql="INSERT INTO req_blood (`patient_name`,`patient_age`,`patient_gender`,`patient_phone`,`patient_address`,`patient_group`,`patient_unit`,`patient_hospital`) VALUES (?)";
+    console.log(req.body)
+    const values = [
+        req.body.name,
+        req.body.age,
+        req.body.gender,
+        req.body.phone,
+        req.body.address,
+        req.body.group,
+        req.body.unit,
+        req.body.hospital,
+    
+    ]
+      db.query(sql, [values], (err,result)=>{
+        if(err) return res.json(err);
+        return res.json(result);
+      })
+})
+
+
 // donate blood
 
-app.post('/Blood',(req,res)=>{
-    const sql = "INSERT INTO donate_blood (`blood_name`, `blood_age`, `blood_group`,`blood_gender`,`blood_phone`,`blood_city`) VALUES (?)";
+app.post('/donateblood',(req,res)=>{
+    const sql = "INSERT INTO donate_blood (`donor_name`, `donor_age`, `donor_group`,`donor_gender`,`donor_phone`,`donor_address`) VALUES (?)";
 
-    const values=[req.body.blood_name,req.body.blood_age,req.body.blood_group,req.body.blood_gender,req.body.blood_phone,req.body.blood_city]
-    db.query(sql,[values],(err,data)=>{
-        if(err){
-            console.error("Error executing SQL query:", err);
-            return res.json("error");
-        }
-        return res.json(data);
-    })
-})
-//platelete donation
-
-app.post('/Platelete',(req,res)=>{
-    const sql = "INSERT INTO donate_platelete (`platelete_name`, `platelete_age`, `platelete_group`,`platelete_gender`,`platelete_phone`,`platelete_city`,`platelete_weight`) VALUES (?)";
-
-    const values=[req.body.platelete_name,req.body.platelete_age,req.body.platelete_group,req.body.platelete_gender,req.body.platelete_phone,req.body.platelete_city,req.body.platelete_weight]
+    const values=[req.body.donor_name,req.body.donor_age,req.body.donor_group,req.body.donor_gender,req.body.donor_phone,req.body.donor_address]
     db.query(sql,[values],(err,data)=>{
         if(err){
             console.error("Error executing SQL query:", err);
@@ -177,7 +207,16 @@ app.post('/Platelete',(req,res)=>{
     })
 })
 
-//rbc donation
+app.get('/donateblood',(req,res)=>{
+    const sql="SELECT *FROM donate_blood";
+    db.query(sql, (err,result)=>{
+        if(err) return res.json({Message:"error in server"});
+        return res.json(result);
+
+    })
+})
+
+// rbc donation
 app.post('/Rbc',(req,res)=>{
     const sql = "INSERT INTO donate_rbc (`rbc_name`, `rbc_age`, `rbc_group`,`rbc_gender`,`rbc_phone`,`rbc_city`,`rbc_weight`) VALUES (?)";
 
@@ -191,7 +230,7 @@ app.post('/Rbc',(req,res)=>{
     })
 })
 
-//stemcell donation
+// stemcell donation
 app.post('/Stemcell',(req,res)=>{
     const sql = "INSERT INTO donate_stemcell (`stemcell_name`, `stemcell_age`, `stemcell_group`,`stemcell_gender`,`stemcell_phone`,`stemcell_city`,`stemcell_weight`,`stemcell_diagnosis`) VALUES (?)";
 

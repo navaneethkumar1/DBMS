@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import  {Button,Modal } from "react-bootstrap";
 import '../css/Create.css';
 
 function Create() {
@@ -18,7 +19,7 @@ function Create() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post('http://localhost:8081/donation', values)
+      .post('http://localhost:8080/donation', values)
       .then((res) => {
         console.log(res);
       navigate('/AdminDashboard')
@@ -27,7 +28,9 @@ function Create() {
   };
 
   return (
-    <div className="container_box">
+    <div className="background">
+      <div className='create-box'>
+      <div className="container_box">
       <form onSubmit={handleSubmit}>
         <div className="mb-3 row">
           <label className="col-sm-2">Username</label>
@@ -100,15 +103,15 @@ function Create() {
             />
           </div>
         </div>
-
-        <div className="mb-3 row">
-          <div className="col-sm-10">
-            <button type="submit">Add User</button>
-          </div>
+          
+            <div >
+                <button className='Dsubmit' type="submit">Add User</button>
+            
+            </div>
+          </form>
         </div>
-      </form>
+      </div>
     </div>
   );
 }
-
 export default Create;

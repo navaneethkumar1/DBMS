@@ -3,6 +3,7 @@ import React, { useEffect } from 'react'
 import { useState } from "react";
 import  {Button} from "react-bootstrap";
 import { useNavigate, useParams } from 'react-router-dom';
+import '../css/Edit.css'
 
 
 function Edit() {
@@ -12,7 +13,7 @@ function Edit() {
       const navigate = useNavigate();
 
       useEffect(()=>{
-        axios.get('http://localhost:8081/read/'+id)
+        axios.get('http://localhost:8080/read/'+id)
         .then(res =>{
             console.log(res)
             setValues({...values, name: res.data[0].user_name, gender: res.data[0].user_gender, age: res.data[0].user_age, bloodgroup: res.data[0].user_group, address: res.data[0].user_address, phone: res.data[0].user_phone})
@@ -34,7 +35,7 @@ function Edit() {
 
   const handleUpdate = (event)=>{
     event.preventDefault();
-    axios.put('http://localhost:8081/edit/'+id, values)
+    axios.put('http://localhost:8080/edit/'+id, values)
     .then(res=>{
         console.log(res)
         navigate('/admindashboard');
@@ -106,9 +107,9 @@ function Edit() {
         </div>
         </div>
       
-        <div className="col-sm-2">
-        <Button variant="secondary" onClick={handleClose}>Close </Button>
-        <Button variant="primary" onClick={handleUpdate}>Update</Button>
+        <div className="c-button">
+        <Button variant="secondary"  className='Dsubmit'  onClick={handleClose}>Close </Button>
+        <Button variant="primary" className='Dsubmit'   onClick={handleUpdate}>Update</Button>
         </div>
          
     </form>
